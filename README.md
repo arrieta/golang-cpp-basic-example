@@ -17,3 +17,19 @@ $ go run library.go
 [go] 42
 [c++ bridge] LIB_DestroyFoo(0x42002e0)
 [c++] Foo::~Foo(42)
+```
+
+I can also build an executable
+
+```
+$ go build library.go
+$ ./library
+[c++ bridge] LIB_NewFoo(42)
+[c++] Foo::Foo(42)
+[c++ bridge] LIB_NewFoo(42) will return pointer 0x4500000
+[c++ bridge] LIB_FooValue(0x4500000)
+[c++] Foo::value() is 42
+[go] 42
+[c++ bridge] LIB_DestroyFoo(0x4500000)
+[c++] Foo::~Foo(42)
+```
